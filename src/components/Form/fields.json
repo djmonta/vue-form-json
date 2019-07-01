@@ -1,7 +1,7 @@
 [
   [
     {
-      "label": "本社名 または 屋号",
+      "label": "本社名 または 屋号 CompanyName",
       "value": "",
       "minLength": 4,
       "maxLength": 50
@@ -9,20 +9,20 @@
   ],
   [
     {
-      "label": "ご担当者様氏名"
+      "label": "ご担当者様氏名 Name"
     },
     {
-      "label": "携帯電話番号",
+      "label": "携帯電話番号 Mobile",
       "type": "tel"
     }
   ],
   [
     {
-      "label": "メールアドレス",
+      "label": "メールアドレス Email",
       "type": "email"
     },
     {
-      "label": "電話番号",
+      "label": "電話番号 Phone",
       "type": "tel"
     }
   ],
@@ -34,14 +34,14 @@
     }
   },
   {
-    "label": "郵便番号",
+    "label": "郵便番号 Zipcode",
     "type": "string",
     "placeholder": "000-0000",
     "pattern": "\\d{3}-\\d{4}$",
     "showLabel": false
   },
   {
-    "label": "本社所在地",
+    "label": "本社所在地 Address",
     "placeholder": "住所",
     "showLabel": false
   },
@@ -53,13 +53,13 @@
     }
   },
   {
-    "label": "店舗名 または 屋号",
+    "label": "店舗名 または 屋号 Shop Name",
     "value": "",
     "minLength": 4,
     "maxLength": 50
   },
   {
-    "label": "店舗名 英語表記",
+    "label": "店舗名 英語表記 Shop Name en",
     "isRequired": false,
     "minLength": 3,
     "maxLength": 50,
@@ -75,7 +75,7 @@
     }
   },
   {
-    "label": "郵便番号",
+    "label": "郵便番号 Shop Zipcode",
     "type": "string",
     "placeholder": "000-0000",
     "pattern": "\\d{3}-\\d{4}$",
@@ -83,31 +83,52 @@
     "isRequired": false
   },
   {
-    "label": "店舗住所",
+    "label": "店舗住所 Shop Address",
     "placeholder": "住所",
     "showLabel": false
   },
   {
-    "label": "店舗電話番号",
+    "label": "店舗電話番号 Shop Phone",
     "type": "tel"
   },
   {
-    "label": "店舗紹介",
+    "label": "店舗紹介 Shop Intro",
     "type": "textarea",
     "isRequired": false
   },
   {
-    "label": "定休日",
+    "label": "定休日 Holiday",
     "type": "checkbox",
     "isRequired": false,
     "items": [
-      "月",
-      "火",
-      "水",
-      "木",
-      "金",
-      "土",
-      "日"
+      {
+        "text": "月 Mon",
+        "value": "Mon"
+      },
+      {
+        "text": "火 Tue",
+        "value": "Tue"
+      },
+      {
+        "text": "水 Wed",
+        "value": "Wed"
+      },
+      {
+        "text": "木 Thu",
+        "value": "Thu"
+      },
+      {
+        "text": "金 Fri",
+        "value": "Fri"
+      },
+      {
+        "text": "土 Sat",
+        "value": "Sat"
+      },
+      {
+        "text": "日 Sun",
+        "value": "Sun"
+      }
     ]
   },
   {
@@ -119,20 +140,20 @@
   },
   [
     {
-      "label": "開始時間",
+      "label": "開始時間 Start Time",
       "type": "time",
       "showLabel": false,
       "isRequired": false
     },
     {
-      "label": "終了時間",
+      "label": "終了時間 End Time",
       "type": "time",
       "showLabel": false,
       "isRequired": false
     }
   ],
   {
-    "label": "営業時間 詳細",
+    "label": "営業時間 詳細 Detail",
     "help": "営業時間が分かれている、形式上表記が不可能な場合は、下記の欄に詳細をご記入ください。また、祝日の営業時間が異なる場合もこちらに営業時間のご記入をお願いいたします。",
     "type": "textarea",
     "placeholder": "祝日: 定休、など",
@@ -143,23 +164,27 @@
     "type": "radio",
     "items": [
       {
-        "text": "あり"
+        "text": "あり Yes",
+        "value": "yes"
       },
       {
-        "text": "なし",
+        "text": "なし No",
+        "value": "no",
         "checked": true
       }
     ]
   },
   {
-    "label": "喫煙スペース",
+    "label": "喫煙スペース Smoking Space",
     "type": "radio",
     "items": [
       {
-        "text": "あり"
+        "text": "あり Smoking Yes",
+        "value": "yes"
       },
       {
-        "text": "なし",
+        "text": "なし Smoking No",
+        "value": "no",
         "checked": true
       }
     ]
@@ -278,31 +303,13 @@
     ]
   },
   {
-    "slot": "boxSlot"
-  },
-  {
-    "label": "S及びL台 配送希望日",
+    "label": "S及びL台 配送希望日 Delivery Date",
     "help": "2週間後以降で日付を設定ください",
     "type": "date",
-    "isRequired": false,
-    "date_format": "yyyy-mm-dd",
-    "validation": {
-      "after": "twoweek_after"
-    }
+    "isRequired": false
   },
   {
-    "label": "twoweek_after",
-    "showLabel": false,
-    "type": "text",
-    "value": "2019-07-15",
-    "isRequired": false,
-    "attr": {
-      "ref": "twoweek_after",
-      "disabled": true
-    }
-  },
-  {
-    "label": "S及びL台 配送希望時間",
+    "label": "S及びL台 配送希望時間 Delivery Time",
     "showLabel":false,
     "type": "select",
     "isRequired": false,
@@ -317,25 +324,25 @@
     "slot": "boxSlot"
   },
   {
-    "label": "第一希望",
+    "label": "第一希望 First",
     "help": "1ヶ月後以降で日付を設定ください",
     "type": "date",
     "isRequired": false
   },
   {
-    "label": "第二希望",
+    "label": "第二希望 Second",
     "help": "1ヶ月後以降で日付を設定ください",
     "type": "date",
     "isRequired": false
   },
   {
-    "label": "第三希望",
+    "label": "第三希望 Third",
     "help": "1ヶ月後以降で日付を設定ください",
     "type": "date",
     "isRequired": false
   },
   {
-    "label": "LL台 配送希望時間",
+    "label": "LL台 配送希望時間 Delivery Time",
     "type": "select",
     "isRequired": false,
     "options": [

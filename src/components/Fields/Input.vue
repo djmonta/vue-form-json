@@ -8,7 +8,6 @@
               :maxlength="!isInputNumber && !hasPattern ? item.maxLength || defaultMaxLength : undefined",
               :min="isInputNumber ? item.min || defaultMin : undefined",
               :max="isInputNumber ? item.max || defaultMax : undefined",
-              :ref="hasReference ? item.attr.ref : undefined",
               :pattern="item.pattern",
               v-bind="item.attr",
               :class="[{ 'is-danger': !!error }, item.attr && item.attr.class]",
@@ -33,9 +32,6 @@ export default {
   computed: {
     hasPattern () {
       return !!this.item.pattern
-    },
-    hasReference () {
-      return !!this.item.attr.ref
     },
     isInputNumber () {
       return this.item.type === 'number'
