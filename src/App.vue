@@ -15,7 +15,7 @@
 
 <script>
 import Form from '@/components/Form'
-import jsonFields from '@/components/Form/fields'
+import jsonFields from '@/components/Form/fields-charge'
 
 export default {
   name: 'app',
