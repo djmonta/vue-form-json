@@ -9,23 +9,21 @@
   ],
   [
     {
+      "label": "ご担当者様氏名"
+    },
+    {
+      "label": "携帯電話番号",
+      "type": "tel"
+    }
+  ],
+  [
+    {
       "label": "メールアドレス",
       "type": "email"
     },
     {
       "label": "電話番号",
       "type": "tel"
-    }
-  ],
-  [
-    {
-      "label": "ご担当者様氏名",
-      "isRequired": false
-    },
-    {
-      "label": "携帯電話番号",
-      "type": "tel",
-      "isRequired": false
     }
   ],
   {
@@ -39,6 +37,7 @@
     "label": "郵便番号",
     "type": "string",
     "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
     "showLabel": false
   },
   {
@@ -60,6 +59,15 @@
     "maxLength": 50
   },
   {
+    "label": "店舗名 英語表記",
+    "isRequired": false,
+    "minLength": 3,
+    "maxLength": 50,
+    "validation": {
+      "alpha_spaces": true
+    }
+  },
+  {
     "html": "<p class='label'>店舗住所<sup class='has-text-grey-light is-size-7'> *</sup></p>",
     "attr": {
       "class": "labelDefaultMb",
@@ -70,6 +78,7 @@
     "label": "郵便番号",
     "type": "string",
     "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
     "showLabel": false,
     "isRequired": false
   },
@@ -100,6 +109,34 @@
       "土",
       "日"
     ]
+  },
+  {
+    "html": "<p class='label'>営業時間</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  [
+    {
+      "label": "開始時間",
+      "type": "time",
+      "showLabel": false,
+      "isRequired": false
+    },
+    {
+      "label": "終了時間",
+      "type": "time",
+      "showLabel": false,
+      "isRequired": false
+    }
+  ],
+  {
+    "label": "営業時間 詳細",
+    "help": "営業時間が分かれている、形式上表記が不可能な場合は、下記の欄に詳細をご記入ください。また、祝日の営業時間が異なる場合もこちらに営業時間のご記入をお願いいたします。",
+    "type": "textarea",
+    "placeholder": "祝日: 定休、など",
+    "isRequired": false
   },
   {
     "label": "WiFi",
@@ -134,7 +171,7 @@
     "isRequired": false
   },
   {
-    "label": "HPのURL",
+    "label": "Webサイト",
     "placeholder": "http://",
     "isRequired": false,
     "validation": {
@@ -145,7 +182,6 @@
     "label": "取扱商品・サービス",
     "type": "select",
     "isRequired": false,
-    "isMultiple": true,
     "options": [
       "バー、居酒屋",
       "デパート、商業施設",
@@ -168,33 +204,145 @@
       "その他"
     ],
     "attr": {
-      "class": "is-multiple",
-      "multiple": true,
-      "size": "19"
+      "class": "is-multiple"
     }
   },
   {
-    "label": "Country",
+    "html": "<p class='label'>お申し込み台数</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "slot": "boxSlot"
+  },
+  {
+    "label": "LL",
     "type": "select",
-    "iconLeft": "globe-americas",
-    "placeholder": "Select your option",
+    "isRequired": false,
     "options": [
-      "Afghanistan",
-      "Åland Islands",
-      "Albania",
-      "Algeria",
-      "...",
-      "Western Sahara",
-      {
-        "text": "Yemen",
-        "value": "YE"
-      },
-      {
-        "text": "Zambia",
-        "value": "ZB",
-        "selected": true
-      },
-      "Zimbabwe"
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "slot": "boxSlot"
+  },
+  {
+    "label": "L",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "slot": "boxSlot"
+  },
+  {
+    "label": "S",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "slot": "boxSlot"
+  },
+  {
+    "label": "S及びL台 配送希望日",
+    "help": "2週間後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false,
+    "date_format": "yyyy-mm-dd",
+    "validation": {
+      "after": "twoweek_after"
+    }
+  },
+  {
+    "label": "twoweek_after",
+    "showLabel": false,
+    "type": "text",
+    "value": "2019-07-15",
+    "isRequired": false,
+    "attr": {
+      "ref": "twoweek_after",
+      "disabled": true
+    }
+  },
+  {
+    "label": "S及びL台 配送希望時間",
+    "showLabel":false,
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "午前中（9時〜12時）",
+      "午後（12時〜18時",
+      "夜（18時〜20時"
+    ]
+  },
+  {
+    "slot": "boxSlot"
+  },
+  {
+    "label": "第一希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "第二希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "第三希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "LL台 配送希望時間",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "午前中（9時〜12時）",
+      "午後（12時〜18時",
+      "夜（18時〜20時"
     ]
   },
   [
