@@ -1,48 +1,178 @@
 [
   [
     {
-      "label": "First Name",
-      "value": "fir",
+      "label": "本社名 または 屋号",
+      "value": "",
       "minLength": 4,
-      "maxLength": 20
-    },
-    {
-      "label": "Last Name",
-      "placeholder": "Last Name placeholder",
-      "minLength": 3
+      "maxLength": 50
     }
   ],
-  {
-    "html": "<div class='box'><article class='media'><div class='media-left'><figure class='image is-64x64'><img src='https://bulma.io/images/placeholders/64x64.png' alt='Image'></figure></div><div class='media-content'><div class='content'><p><strong class='has-text-info'>Info</strong><br>You can also pass html like this box</p></div>"
-  },
   [
     {
-      "label": "Email",
+      "label": "メールアドレス",
       "type": "email"
     },
     {
-      "label": "Phone Number",
+      "label": "電話番号",
+      "type": "tel"
+    }
+  ],
+  [
+    {
+      "label": "ご担当者様氏名",
+      "isRequired": false
+    },
+    {
+      "label": "携帯電話番号",
       "type": "tel",
       "isRequired": false
     }
   ],
   {
-    "label": "Address",
-    "placeholder": "Address"
-  },
-  [
-    {
-      "label": "Zip",
-      "type": "number",
-      "placeholder": "Zip",
-      "showLabel": false
-    },
-    {
-      "label": "City",
-      "placeholder": "City",
-      "showLabel": false
+    "html": "<p class='label'>本社所在地<sup class='has-text-grey-light is-size-7'> *</sup></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
     }
-  ],
+  },
+  {
+    "label": "郵便番号",
+    "type": "string",
+    "placeholder": "000-0000",
+    "showLabel": false
+  },
+  {
+    "label": "本社所在地",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "html": "<p class='label'>店舗について</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "店舗名 または 屋号",
+    "value": "",
+    "minLength": 4,
+    "maxLength": 50
+  },
+  {
+    "html": "<p class='label'>店舗住所<sup class='has-text-grey-light is-size-7'> *</sup></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "郵便番号",
+    "type": "string",
+    "placeholder": "000-0000",
+    "showLabel": false,
+    "isRequired": false
+  },
+  {
+    "label": "店舗住所",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "label": "店舗電話番号",
+    "type": "tel"
+  },
+  {
+    "label": "店舗紹介",
+    "type": "textarea",
+    "isRequired": false
+  },
+  {
+    "label": "定休日",
+    "type": "checkbox",
+    "isRequired": false,
+    "items": [
+      "月",
+      "火",
+      "水",
+      "木",
+      "金",
+      "土",
+      "日"
+    ]
+  },
+  {
+    "label": "WiFi",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり"
+      },
+      {
+        "text": "なし",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "喫煙スペース",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり"
+      },
+      {
+        "text": "なし",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "一人あたりの平均単価（円）",
+    "type": "number",
+    "placeholder": 1000,
+    "isRequired": false
+  },
+  {
+    "label": "HPのURL",
+    "placeholder": "http://",
+    "isRequired": false,
+    "validation": {
+      "url": true
+    }
+  },
+  {
+    "label": "取扱商品・サービス",
+    "type": "select",
+    "isRequired": false,
+    "isMultiple": true,
+    "options": [
+      "バー、居酒屋",
+      "デパート、商業施設",
+      "各種サービス",
+      "オフィス",
+      "教室、習い事",
+      "交通（駅、空港）",
+      "学校",
+      "郵便局",
+      "病院",
+      "宿泊施設",
+      "美容系、サロン",
+      "アミューズメント",
+      "コンビニエンスストア",
+      "スーパーマーケット",
+      "販売",
+      "スポーツ施設",
+      "公共施設",
+      "イベント",
+      "その他"
+    ],
+    "attr": {
+      "class": "is-multiple",
+      "multiple": true,
+      "size": "19"
+    }
+  },
   {
     "label": "Country",
     "type": "select",
@@ -55,8 +185,15 @@
       "Algeria",
       "...",
       "Western Sahara",
-      {"text": "Yemen", "value": "YE"},
-      {"text": "Zambia", "value": "ZB", "selected": true},
+      {
+        "text": "Yemen",
+        "value": "YE"
+      },
+      {
+        "text": "Zambia",
+        "value": "ZB",
+        "selected": true
+      },
       "Zimbabwe"
     ]
   },
@@ -122,8 +259,15 @@
     "label": "Checkbox",
     "type": "checkbox",
     "items": [
-      {"text": "one", "value": 1, "checked": true},
-      {"text": "two", "checked": true},
+      {
+        "text": "one",
+        "value": 1,
+        "checked": true
+      },
+      {
+        "text": "two",
+        "checked": true
+      },
       "three"
     ]
   },
@@ -131,7 +275,11 @@
     "label": "Radio",
     "type": "radio",
     "items": [
-      {"text": "RadioOne", "value": "Radio-One", "checked": true},
+      {
+        "text": "RadioOne",
+        "value": "Radio-One",
+        "checked": true
+      },
       "RadioTwo",
       "RadioThree"
     ]
