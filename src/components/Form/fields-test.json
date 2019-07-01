@@ -1,0 +1,320 @@
+[
+  {
+    "label": "本社名 または 屋号",
+    "value": "",
+    "minLength": 4,
+    "maxLength": 50
+  },
+  [
+    {
+      "label": "ご担当者様氏名"
+    },
+    {
+      "label": "携帯電話番号",
+      "type": "tel"
+    }
+  ],
+  [
+    {
+      "label": "メールアドレス",
+      "type": "email"
+    },
+    {
+      "label": "電話番号",
+      "type": "tel"
+    }
+  ],
+  {
+    "html": "<p class='label'>本社所在地<sup class='has-text-grey-light is-size-7'> *</sup></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "郵便番号",
+    "type": "string",
+    "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
+    "showLabel": false
+  },
+  {
+    "label": "本社所在地",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "html": "<p class='label'>店舗について</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "店舗名 または 屋号",
+    "value": "",
+    "minLength": 4,
+    "maxLength": 50
+  },
+  {
+    "label": "店舗名 英語表記",
+    "isRequired": false,
+    "minLength": 3,
+    "maxLength": 50,
+    "validation": {
+      "alpha_spaces": true
+    }
+  },
+  {
+    "html": "<p class='label'>店舗住所<sup class='has-text-grey-light is-size-7'> *</sup></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "郵便番号",
+    "type": "string",
+    "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
+    "showLabel": false,
+    "isRequired": false
+  },
+  {
+    "label": "店舗住所",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "label": "店舗電話番号",
+    "type": "tel"
+  },
+  {
+    "label": "店舗紹介",
+    "type": "textarea",
+    "isRequired": false
+  },
+  {
+    "label": "定休日",
+    "type": "checkbox",
+    "isRequired": false,
+    "items": [
+      "月",
+      "火",
+      "水",
+      "木",
+      "金",
+      "土",
+      "日"
+    ]
+  },
+  {
+    "html": "<p class='label'>営業時間</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  [
+    {
+      "label": "開始時間",
+      "type": "time",
+      "showLabel": false,
+      "isRequired": false
+    },
+    {
+      "label": "終了時間",
+      "type": "time",
+      "showLabel": false,
+      "isRequired": false
+    }
+  ],
+  {
+    "label": "営業時間 詳細",
+    "help": "営業時間が分かれている、形式上表記が不可能な場合は、下記の欄に詳細をご記入ください。また、祝日の営業時間が異なる場合もこちらに営業時間のご記入をお願いいたします。",
+    "type": "textarea",
+    "placeholder": "祝日: 定休、など",
+    "isRequired": false
+  },
+  {
+    "label": "WiFi",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり",
+        "value": "yes"
+      },
+      {
+        "text": "なし",
+        "value": "no",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "喫煙スペース",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり",
+        "value": "yes"
+      },
+      {
+        "text": "なし",
+        "value": "no",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "一人あたりの平均単価（円）",
+    "type": "number",
+    "placeholder": 1000,
+    "isRequired": false
+  },
+  {
+    "label": "Webサイト",
+    "placeholder": "http://",
+    "isRequired": false,
+    "validation": {
+      "url": true
+    }
+  },
+  {
+    "label": "取扱商品・サービス",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "バー、居酒屋",
+      "デパート、商業施設",
+      "各種サービス",
+      "オフィス",
+      "教室、習い事",
+      "交通（駅、空港）",
+      "学校",
+      "郵便局",
+      "病院",
+      "宿泊施設",
+      "美容系、サロン",
+      "アミューズメント",
+      "コンビニエンスストア",
+      "スーパーマーケット",
+      "販売",
+      "スポーツ施設",
+      "公共施設",
+      "イベント",
+      "その他"
+    ],
+    "attr": {
+      "class": "is-multiple"
+    }
+  },
+  {
+    "html": "<p class='label'>お申し込み台数</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "LL",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "label": "L",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "label": "S",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "label": "S及びL台 配送希望日",
+    "help": "2週間後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "S及びL台 配送希望時間",
+    "showLabel":false,
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "午前中（9時〜12時）",
+      "午後（12時〜18時",
+      "夜（18時〜20時"
+    ]
+  },
+  {
+    "label": "第一希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "第二希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "第三希望",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "type": "date",
+    "isRequired": false
+  },
+  {
+    "label": "LL台 配送希望時間",
+    "type": "select",
+    "isRequired": false,
+    "options": [
+      "",
+      "午前中（9時〜12時）",
+      "午後（12時〜18時",
+      "夜（18時〜20時"
+    ]
+  }
+]
