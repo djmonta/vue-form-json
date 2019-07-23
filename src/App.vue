@@ -1,19 +1,37 @@
 <template lang="pug">
-  #app.section
-    app-form(:formFields="jsonFields",
-             :formName="'userProfil'")
-      div(slot="boxSlot")
-        .box
-          article
-            .content
-              p
-                strong.has-text-info Info<br>
-                | You can also use
-                strong  named slot
-                |  like this one
+  .section.container
+    form(:name="'inquery'")
+      input(:type="'hidden'", :name="'_token'", :value="csrf")
+      el-steps(:space="200", :active="active", finish-status="success", simple)
+        el-step(description="注意事項")
+        el-step(title="基本情報", icon="el-icon-user")
+        el-step(title="店舗について", icon="el-icon-time")
+        el-step(title="お申し込み", icon="el-icon-shopping-cart-2")
+        el-step(title="広告掲載同意書", icon="el-icon-document-checked")
+        el-step(title="確認", icon="el-icon-check")
+
+      form0(:data-vv-scope="'step0'", v-show="active === 0",
+            :formFields="fields0", :formName="'caution'")
+        div(slot="cautionSlot")
+          cautionSlot
+
+      form1(:data-vv-scope="'step1'", v-show="active === 1",
+            :formFields="fields1", :formName="'userProfile'")
+        popup-map(slot="popupMap", :address="inputAddress")
+      form2(:data-vv-scope="'step2'", v-show="active === 2",
+            :formFields="fields2", :formName="'shopTime'")
+      form3(:data-vv-scope="'step3'", v-show="active === 3",
+            :formFields="fields3", :formName="'application'")
+      form4(:data-vv-scope="'step4'", v-show="active === 4",
+            :formFields="fields4", :formName="'advertiseAgent'")
+
+      .field(v-if="active === 5")
+        confirmView(v-bind:dataSet="dataSet", v-bind:position="position")
+        
 </template>
 
 <script>
+import Vue from 'vue'
 import VeeValidate, { Validator } from 'vee-validate'
 import japanese from 'vee-validate/dist/locale/ja'
 import { DatePicker, TimePicker, TimeSelect, Switch, Steps, Step, Dialog, Button } from 'element-ui'
@@ -72,7 +90,14 @@ Validator.extend('phoneNumber', phoneNumber)
 export default {
   name: 'app',
   components: {
-    appForm: Form
+    form0: Form,
+    form1: Form,
+    form2: Form,
+    form3: Form,
+    form4: Form,
+    confirmView: Confirm,
+    cautionSlot: cautionSlot,
+    popupMap: popupMap
   },
   data: () => ({
     version: version,
