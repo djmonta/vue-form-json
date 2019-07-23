@@ -28,10 +28,10 @@ import Select from '@/components/Fields/Select'
 import Textarea from '@/components/Fields/Textarea'
 import Checkbox from '@/components/Fields/Checkbox'
 import Radio from '@/components/Fields/Radio'
-import Datepicker from '@/components/DatePicker'
-import Timerange from '@/components/TimeRange'
-import Timepicker from '@/components/TimePicker'
-import BusinessHour from '@/components/BusinessHour'
+import Datepicker from '@/components/Fields/DatePicker'
+import Timerange from '@/components/Fields/TimeRange'
+import Timepicker from '@/components/Fields/TimePicker'
+import BusinessHour from '@/components/Fields/BusinessHour'
 
 const NOT_NORMAL_INPUT = ['textarea', 'select', 'checkbox', 'radio', 'datepicker', 'timerange', 'timepicker', 'businesshour']
 
