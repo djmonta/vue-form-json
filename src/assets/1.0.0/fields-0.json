@@ -1,0 +1,24 @@
+[
+  {
+    "slot": "cautionSlot"
+  },
+  {
+    "label": "version",
+    "name": "version",
+    "showLabel": false,
+    "type": "hidden",
+    "value": "1.0.0"
+  },
+  {
+    "label": "利用規約",
+    "name": "agree",
+    "type": "checkbox",
+    "showLabel":false,
+    "items": [
+      { "text": "上記の利用規約および注意事項に同意", "value": "同意"}
+    ],
+    "attr": {
+      "class": "mt-5 mb-7"
+    }
+  }
+]

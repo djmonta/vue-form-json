@@ -2,8 +2,8 @@
   div
     label.radio(v-for="(x, index) in item.items",
                 :key="index",
-                :for="x.text || x | slugify")
-      input(:id="x.text || x | slugify",
+                :for="x.name || x.text || x | slugify")
+      input(:id="x.name || x.text || x | slugify",
             :name="item.label | slugify",
             :value="x.value || x.text || x",
             v-model="value",

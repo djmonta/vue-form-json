@@ -1,0 +1,142 @@
+[
+  {
+    "label": "本社名 または 屋号",
+    "name": "company_name",
+    "value": "",
+    "maxLength": 50
+  },
+  [
+    {
+      "label": "ご担当者様氏名",
+      "name": "name"
+    },
+    {
+      "label": "携帯電話番号",
+      "name": "mobile",
+      "type": "tel",
+      "validation": {
+        "phoneNumber": true
+      }
+    }
+  ],
+  [
+    {
+      "label": "メールアドレス",
+      "name": "email",
+      "type": "email"
+    },
+    {
+      "label": "電話番号",
+      "name": "phone",
+      "type": "tel",
+      "validation": {
+        "phoneNumber": true
+      }
+    }
+  ],
+  {
+    "html": "<p class='label'>本社所在地<sup class='has-text-grey-light is-size-7'> *</sup></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "郵便番号",
+    "name": "postcode",
+    "type": "string",
+    "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
+    "showLabel": false
+  },
+  {
+    "label": "本社所在地",
+    "name": "address",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "html": "<p class='label'>設置店舗について</p><p class='desc mb-5'>こちらの情報は、ChargeSPOTアプリに反映致します。<br>店舗住所は、必ず都道府県名をご入力ください。<br>個人情報保護の為、店舗電話番号は固定電話の番号をご入力下さい。</p>",
+    "attr": {
+      "class": "labelDefaultMb mt-15",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "店舗名 または 屋号",
+    "name": "shop_name",
+    "value": "",
+    "maxLength": 50
+  },
+  {
+    "label": "店舗名 英語表記",
+    "name": "shop_name_en",
+    "isRequired": false,
+    "maxLength": 50,
+    "pattern": "[a-zA-Z\\d\\s!#$%&'()\\*\\+\\-\\.\\/:;<=>?@\\[\\]^_`{}~]+"
+  },
+  {
+    "html": "<p class='label'>店舗住所<sup class='has-text-grey-light is-size-7'> *</sup><span class='helpLabel has-text-grey-light is-size-7'>必ず都道府県名をご入力ください。</span></p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "店舗郵便番号",
+    "name": "shop_postcode",
+    "type": "string",
+    "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$",
+    "showLabel": false,
+    "isRequired": false
+  },
+  {
+    "label": "店舗住所",
+    "name": "shop_address",
+    "placeholder": "住所",
+    "showLabel": false
+  },
+  {
+    "slot": "popupMap"
+  },
+  {
+    "label": "店舗電話番号",
+    "name": "shop_phone",
+    "help": "個人情報保護の為、店舗電話番号は固定電話の番号をご入力下さい。",
+    "type": "tel",
+    "validation": {
+      "phoneNumber": true
+    }
+  },
+  {
+    "label": "取扱商品・サービス",
+    "name": "shop_service",
+    "type": "select",
+    "placeholder": "選択",
+    "attr": {
+      "class": "mb-10"
+    },
+    "options": [
+      "バー、居酒屋",
+      "デパート、商業施設",
+      "各種サービス",
+      "オフィス",
+      "教室、習い事",
+      "交通（駅、空港）",
+      "学校",
+      "郵便局",
+      "病院",
+      "宿泊施設",
+      "美容系、サロン",
+      "アミューズメント",
+      "コンビニエンスストア",
+      "スーパーマーケット",
+      "販売",
+      "スポーツ施設",
+      "公共施設",
+      "イベント",
+      "その他"
+    ]
+  }
+]

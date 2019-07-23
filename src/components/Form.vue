@@ -1,5 +1,5 @@
 <template lang="pug">
-  form(:data-vv-scope="formName",
+  fieldset(:data-vv-scope="formName",
        @submit.prevent="beforeSubmit")
 
     div(v-for="(item, index) in formFields", :key="index")
@@ -24,15 +24,14 @@
         app-label(:item="item")
         app-control(:item="item", ref="control")
 
-    .field.form-footer.is-grouped.is-opposed
-      input.button(type="reset",
-                  :value="btnResetText",
-                  @click="resetForm")
-      input.button.is-primary(type="submit",
-                              :value="btnSubmitText",
-                              :disabled="!isFormValid")
+    p.is-size-7.fieldRequiredLegend.my-2 {{ mandatoryAsteriskLegend }}
 
-    p.is-size-7.fieldRequiredLegend {{ mandatoryAsteriskLegend }}
+    .field.form-footer.is-grouped.is-opposed.mt-5
+      input.button(:value="btnBackText", @click="back", readonly="true", :disabled="formName === 'caution'")
+      input.button.is-info(@click="process",
+                              :value="btnNextText",
+                              :disabled="!isFormValid", readonly="true")
+
 </template>
 
 <script>
@@ -41,8 +40,8 @@ import pickAll from 'ramda/src/pickAll'
 import pipe from 'ramda/src/pipe'
 import map from 'ramda/src/map'
 
-import Label from '@/components/Fields/Label'
-import Control from '@/components/Fields/Control'
+import Label from './Fields/Label'
+import Control from './Fields/Control'
 
 const getLabels = ({ label }) => label
 const valueToProp = object => pickAll(object, {})
@@ -65,15 +64,19 @@ export default {
     },
     mandatoryAsteriskLegend: {
       type: String,
-      default: '* field required'
+      default: '* 印の欄は入力必須情報です'
     },
     btnSubmitText: {
       type: String,
-      default: 'Submit'
+      default: 'Next'
     },
     btnResetText: {
       type: String,
       default: 'Reset'
+    },
+    btnBackText: {
+      type: String,
+      default: 'Back'
     },
     resetFormAfterSubmit: {
       type: Boolean,
@@ -98,6 +101,22 @@ export default {
     hasIcon: {
       type: Boolean,
       default: true
+    },
+    defaultStartPlaceholder: {
+      type: String,
+      default: '開始時刻'
+    },
+    defaultEndPlaceholder: {
+      type: String,
+      default: '終了時刻'
+    },
+    defaultFormat: {
+      type: String,
+      default: 'yyyy/MM/dd'
+    },
+    btnNextText: {
+      type: String,
+      default: 'Next'
     }
   },
   data: () => ({
@@ -120,6 +139,26 @@ export default {
     }
   },
   methods: {
+    scroll () {
+      // やむなくjQuery
+      $('html,body').animate({ scrollTop: 0 }, 'fast')
+    },
+    back () {
+      this.$parent.backStep()
+    },
+    async process () {
+      this.scroll()
+
+      let isValidated = false
+      await this.$validator.validateAll(this.formName).then(result => {
+        isValidated = result
+      })
+
+      if (isValidated && this.isFormValid) {
+        // console.log(this.formValues);
+        this.$parent.process(this.formValues)
+      }
+    },
     async beforeSubmit (ev) {
       let isValidated = false
       await this.$validator.validateAll(this.formName)
@@ -174,11 +213,13 @@ export default {
 
 <style lang="stylus">
   $defaultMargin = .75rem
-  $formWidth = 28rem
+  $formWidth = 40rem
   $bp_mobile = 496px
 
-  form
+  fieldset
+    margin 2.5rem auto
     max-width $formWidth
+    text-align left
 
   .field
   .field-body
@@ -198,6 +239,7 @@ export default {
         width ($formWidth / 2 - $defaultMargin / 2)
 
   .form-footer
+    margin 2rem auto 3rem
     .button:not(:last-child)
       margin-right $defaultMargin
 
@@ -212,6 +254,9 @@ export default {
 
         .control
           line-height 36px
+    &.htmlContentFromFormFields
+      img
+        max-width 80%
 
   .error-title
     margin-bottom 0

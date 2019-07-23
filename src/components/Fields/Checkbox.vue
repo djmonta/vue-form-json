@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div(:class="[item.attr && item.attr.class]")
     label.checkbox(v-for="(x, index) in item.items",
                   :key="index",
                   :for="x.text || x | slugify")

@@ -28,8 +28,12 @@ import Select from '@/components/Fields/Select'
 import Textarea from '@/components/Fields/Textarea'
 import Checkbox from '@/components/Fields/Checkbox'
 import Radio from '@/components/Fields/Radio'
+import Datepicker from '@/components/DatePicker'
+import Timerange from '@/components/TimeRange'
+import Timepicker from '@/components/TimePicker'
+import BusinessHour from '@/components/BusinessHour'
 
-const NOT_NORMAL_INPUT = ['textarea', 'select', 'checkbox', 'radio']
+const NOT_NORMAL_INPUT = ['textarea', 'select', 'checkbox', 'radio', 'datepicker', 'timerange', 'timepicker', 'businesshour']
 
 export default {
   name: 'Control',
@@ -38,7 +42,11 @@ export default {
     appSelect: Select,
     appTextarea: Textarea,
     appCheckbox: Checkbox,
-    appRadio: Radio
+    appRadio: Radio,
+    appDatepicker: Datepicker,
+    appTimerange: Timerange,
+    appTimepicker: Timepicker,
+    appBusinesshour: BusinessHour
   },
   data: () => ({
     value: undefined
@@ -70,6 +78,9 @@ export default {
       return this.isNormalInput ? 'input' : this.item.type
     },
     getValidation () {
+      if (this.item.name === 'shop_address') {
+        this.$root.$emit('addressInput', this.value)
+      }
       const { type, minLength, maxLength, min, max, pattern } = this.item
       const { defaultMinLength, defaultMaxLength, defaultMin, defaultMax } = this.$parent
       const isNormalInputOrTextarea = this.isNormalInput || type === 'textarea'

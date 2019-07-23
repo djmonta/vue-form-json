@@ -1,5 +1,5 @@
 <template lang="pug">
-  .select.is-block(:class="{ 'is-danger': !!error, 'is-multiple': item.isMultiple }")
+  .select.is-block(:class="[{ 'is-danger': !!error, 'is-multiple': item.isMultiple }, item.attr && item.attr.class]")
     select.is-fullwidth(:id="item.label | slugify",
           :name="item.label | slugify",
           :required="item.isRequired !== false",

@@ -1,0 +1,156 @@
+[
+  {
+    "html": "<p class='label subtitle'>店舗について</p><p class='desc'>こちらの情報は、ChargeSPOTアプリに反映致します。</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "WiFi",
+    "name": "wifi",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり",
+        "name": "wifi_yes",
+        "value": "あり"
+      },
+      {
+        "text": "なし",
+        "name": "wifi_no",
+        "value": "なし",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "喫煙スペース",
+    "name": "smoking_space",
+    "type": "radio",
+    "items": [
+      {
+        "text": "あり",
+        "name": "smoking_yes",
+        "value": "あり"
+      },
+      {
+        "text": "なし",
+        "name": "smoking_no",
+        "value": "なし",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "label": "一人あたりの平均単価（円）",
+    "name": "average_consumption",
+    "type": "number",
+    "placeholder": 1000,
+    "isRequired": false
+  },
+  {
+    "label": "Webサイト",
+    "name": "shop_website",
+    "placeholder": "http://",
+    "isRequired": false,
+    "validation": {
+      "url": true
+    }
+  },
+  {
+    "html": "<p class='label'>営業日・営業時間</p><p class='desc mb-5'>システム上、30分区切りでしか営業時間を区切る事が出来ません。ご了承下さい。</p>",
+    "attr": {
+      "class": "labelDefaultMb mt-15",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "月曜日",
+    "name": "shop_time_monday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "火曜日",
+    "name": "shop_time_tuesday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "水曜日",
+    "name": "shop_time_wednesday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "木曜日",
+    "name": "shop_time_thursday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "金曜日",
+    "name": "shop_time_friday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "土曜日",
+    "name": "shop_time_saturday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "日曜日",
+    "name": "shop_time_sunday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "店舗紹介・営業時間 詳細",
+    "help": "ランチタイム、ディナータイムが別れている等、形式上表記が不可能な場合、下記の欄に詳細をご記入下さい。また、祝日の営業時間が異なる場合もこちらに営業時間の記入をお願いいたします",
+    "name": "shop_intro",
+    "type": "textarea",
+    "isRequired": false,
+    "maxLength": 200,
+    "attr": {
+      "class": "mb-10"
+    }
+  }
+]

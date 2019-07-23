@@ -1,0 +1,379 @@
+[
+  {
+    "label": "version",
+    "name": "version",
+    "type": "hidden",
+    "value": "1.0.0"
+  },
+  {
+    "label": "利用規約",
+    "name": "agree",
+    "type": "checkbox",
+    "items": [
+      "同意"
+    ]
+  },
+  {
+    "label": "本社名 または 屋号",
+    "name": "company_name",
+    "maxLength": 50
+  },
+  {
+    "label": "ご担当者様氏名",
+    "name": "name"
+  },
+  {
+    "label": "携帯電話番号",
+    "name": "mobile",
+    "type": "tel",
+    "validation": {
+      "phoneNumber": true
+    }
+  },
+  {
+    "label": "メールアドレス",
+    "name": "email",
+    "type": "email"
+  },
+  {
+    "label": "電話番号",
+    "name": "phone",
+    "type": "tel",
+    "validation": {
+      "phoneNumber": true
+    }
+  },
+  {
+    "label": "郵便番号",
+    "name": "postcode",
+    "type": "string",
+    "placeholder": "000-0000",
+    "pattern": "\\d{3}-\\d{4}$"
+  },
+  {
+    "label": "本社所在地",
+    "name": "address",
+    "placeholder": "住所"
+  },
+  {
+    "label": "店舗名 または 屋号",
+    "name": "shop_name",
+    "maxLength": 50
+  },
+  {
+    "label": "店舗名 英語表記",
+    "name": "shop_name_en",
+    "isRequired": false,
+    "maxLength": 50,
+    "patteern": "[a-zA-Z\\d\\s!#$%&'()\\*\\+\\-\\.\\/:;<=>?@\\[\\]^_`{|}~]+"
+  },
+  {
+    "label": "店舗郵便番号",
+    "name": "shop_postcode",
+    "type": "string",
+    "pattern": "\\d{3}-\\d{4}$",
+    "isRequired": false
+  },
+  {
+    "label": "店舗住所",
+    "name": "shop_address"
+  },
+  {
+    "label": "lat",
+    "name": "latitude",
+    "isRequired": false,
+    "type": "number"
+  },
+  {
+    "label": "lng",
+    "name": "longitude",
+    "isRequired": false,
+    "type": "number"
+  },
+  {
+    "label": "店舗電話番号",
+    "name": "shop_phone",
+    "type": "tel",
+    "validation": {
+      "phoneNumber": true
+    }
+  },
+  {
+    "label": "取扱商品・サービス",
+    "name": "shop_service",
+    "type": "select",
+    "options": [
+      "バー、居酒屋",
+      "デパート、商業施設",
+      "各種サービス",
+      "オフィス",
+      "教室、習い事",
+      "交通（駅、空港）",
+      "学校",
+      "郵便局",
+      "病院",
+      "宿泊施設",
+      "美容系、サロン",
+      "アミューズメント",
+      "コンビニエンスストア",
+      "スーパーマーケット",
+      "販売",
+      "スポーツ施設",
+      "公共施設",
+      "イベント",
+      "その他"
+    ]
+  },
+  {
+    "label": "WiFi",
+    "name": "wifi",
+    "type": "radio",
+    "items": [
+      "あり","なし"
+    ]
+  },
+  {
+    "label": "喫煙スペース",
+    "name": "smoking_space",
+    "type": "radio",
+    "items": [
+      "あり","なし"
+    ]
+  },
+  {
+    "label": "一人あたりの平均単価（円）",
+    "name": "average_consumption",
+    "type": "number",
+    "isRequired": false
+  },
+  {
+    "label": "Webサイト",
+    "name": "shop_website",
+    "isRequired": false,
+    "validation": {
+      "url": true
+    }
+  },
+  {
+    "label": "月曜日",
+    "name": "shop_time_monday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "火曜日",
+    "name": "shop_time_tuesday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "水曜日",
+    "name": "shop_time_wednesday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "木曜日",
+    "name": "shop_time_thursday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "金曜日",
+    "name": "shop_time_friday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "土曜日",
+    "name": "shop_time_saturday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "日曜日",
+    "name": "shop_time_sunday",
+    "type": "businesshour",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "00:00",
+      "end": "48:00",
+      "step": "0:30"
+    }
+  },
+  {
+    "label": "店舗紹介",
+    "name": "shop_intro",
+    "type": "textarea",
+    "isRequired": false,
+    "maxLength": 200
+  },
+  {
+    "label": "Sモデル",
+    "name": "S_model",
+    "type": "select",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "label": "Lモデル",
+    "name": "L_model",
+    "type": "select",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "label": "LLモデル",
+    "name": "LL_model",
+    "type": "select",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "label": "配送希望日",
+    "name": "delivery_date",
+    "type": "datepicker",
+    "allowDaysAfter": 13,
+    "isRequired": false
+  },
+  {
+    "label": "配送希望時間",
+    "name": "delivery_time",
+    "type": "select",
+    "isRequired": false,
+    "options": ["午前中（9時〜12時）", "午後（12時〜18時）", "夜（18時〜20時）"]
+  },
+  {
+    "label": "第一希望",
+    "name": "LL_delivery_date1",
+    "type": "datepicker",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "第二希望",
+    "name": "LL_delivery_date2",
+    "type": "datepicker",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "第三希望",
+    "name": "LL_delivery_date3",
+    "type": "datepicker",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "納品可能時間",
+    "name": "LL_delivery_time",
+    "type": "timerange",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "09:00",
+      "end": "18:00",
+      "step": "1:00"
+    }
+  },
+  {
+    "label": "広告掲載同意書",
+    "name": "advertise_exclude",
+    "type": "checkbox",
+    "isRequired": false,
+    "items": [
+      "A11 | 石油 | エネルギー | エネルギー素材・機械 | 石油類（ガソリン、灯油、潤滑油）",
+      "A12 | 電力・ガス | エネルギー | エネルギー素材・機械 | 電力、ガス、原子力、プロパンガス",
+      "A13 | その他エネルギー | エネルギー | エネルギー素材・機械 | 石炭、木炭",
+      "A19 | エネルギー団体 | エネルギー | エネルギー素材・機械 | エネルギー関連の協会、団体、組合",
+      "A21 | 紙・パルプ | 原材料・素材 | エネルギー素材・機械 | 紙、パルプ",
+      "A22 | 木材 | 原材料・素材 | エネルギー素材・機械 | 木材",
+      "A23 | 鉄・鉄鋼 | 原材料・素材 | エネルギー素材・機械 | 鉄、鉄鋼関連（含む原鉄）",
+      "A24 | 非鉄金属 | 原材料・素材 | エネルギー素材・機械 | ステンレス、アルミ、ニッケル、金、銀、銅、亜鉛、錫、電線、その他非鉄金属およびその製品",
+      "A25 | 化学 | 原材料・素材 | エネルギー素材・機械 | 化学製品､合成樹脂､ゴム､塗料､接着剤",
+      "A26 | その他原材料 | 原材料・素材 | エネルギー素材・機械 | 肥料、セメント、種苗、飼料",
+      "A29 | 原材料・素材団体 | 原材料・素材 | エネルギー素材・機械 | 原材料・素材の協会、団体、組合",
+      "B11 | 乳製品 | 食品 | 食品 | 牛乳、バター、チーズ、ヨーグルト、アイスクリーム",
+      "B12 | 米・パン・菓子 | 食品 | 食品 | 穀類、パン、菓子類、粉類",
+      "B13 | 加工食品 | 食品 | 食品 | 麺類、インスタント食品、レトルト食品、水産・畜産加工品、缶詰、瓶詰、漬物、ベビーフードなど",
+      "B14 | 調味料 | 食品 | 食品 | 化学調味料、砂糖、塩、酢、醤油、ソース、味噌、マヨネーズ、ケチャップ、食用油、味醂、スパイス、たれ など",
+      "B15 | その他食品 | 食品 | 食品 | 食肉野菜魚介類、果物、卵、健康食品",
+      "B16 | ペットフード | 食品 | 食品 | ドックフード、キャットフード、ペット用品",
+      "B19 | 食品団体 | 食品 | 食品 | 食品関連の協会、団体、組合 ※農協、漁協、経済連、生協などを含む",
+      "B21 | アルコール飲料 | アルコール飲料 | 飲料・嗜好品 | 日本酒、ビール、ウィスキー、ワイン、焼酎、果実酒など",
+      "B29 | アルコール飲料団体 | アルコール飲料 | 飲料・嗜好品 | アルコール飲料の協会、団体、組合",
+      "B31 | 清涼飲料 | 非アルコール飲料 | 飲料・嗜好品 | 炭酸飲料、ジュース、コーラ、水など",
+      "B32 | 嗜好性飲料 | 非アルコール飲料 | 飲料・嗜好品 | コーヒー、紅茶、緑茶、麦茶、ココア",
+      "B33 | その他飲料 | 非アルコール飲料 | 飲料・嗜好品 | 豆乳、機能性飲料、乳酸飲料（ｅｘ.カルピス、ヤクルトなど）、その他飲料",
+      "B39 | 非アルコール飲料団体 | 非アルコール飲料 | 飲料・嗜好品 | 非アルコール飲料の協会、団体、組合",
+      "B41 | 嗜好品 | 嗜好品 | 飲料・嗜好品 | タバコ",
+      "B49 | 嗜好品団体 | 嗜好品 | 飲料・嗜好品 | 嗜好品の協会、団体、組合",
+      "C11 | 薬品 | 薬品 | 薬品・医療用品 | 家庭・医家用薬品",
+      "C19 | 薬品団体 | 薬品 | 薬品・医療用品 | 薬品関連の協会、団体、組合",
+      "C21 | 医療用品 | 医療用品 | 薬品・医療用品 | カイロ、体温計、血圧計、介護器具、車椅子、眼鏡、コンタクトレンズ",
+      "C29 | 医療用品団体 | 医療用品 | 薬品・医療用品 | 衛生医療関連の協会、団体、組合",
+      "D11 | 化粧品・化粧用具 | 化粧品・衛生用品 | 化粧品・トイレタリー | 化粧品全般、香水、カミソリ、かつら、染毛剤",
+      "D12 | 衛生用品 | 化粧品・衛星用品 | 化粧品・トイレタリー | 生理・避妊用品、ティッシュ、紙おむつ、歯磨、歯ブラシ （口臭剤は薬品）",
+      "D19 | 化粧品・衛星用品団体 | 化粧品・衛星用品 | 化粧品・トイレタリー | 化粧関連の協会、団体、組合",
+      "D21 | 洗剤・石鹸 | 洗剤 | 化粧品・トイレタリー | 洗濯・厨房・住宅用洗剤、入浴剤、石鹸、シャンプー、リンス",
+      "D29 | 洗剤・石鹸団体 | 洗剤 | 化粧品・トイレタリー | 洗剤・石鹸関連の協会、団体、組合",
+      "E11 | ファッション | ファッション | ファッション・アクセサリー | 男性･女性･子供用ファッション、繊維生地、スポーツウェア、呉服",
+      "E19 | ファッション団体 | ファッション | ファッション・アクセサリー | ファッション関連の協会、団体、組合",
+      "E21 | アクセサリー | アクセサリー | ファッション・アクセサリー | 宝石、靴、バック、傘、ベルトネクタイ、ハンカチ、ライター、アクセサリー",
+      "E29 | アクセサリー団体 | アクセサリー | ファッション・アクセサリー | アクセサリー関連の協会、団体、組合",
+      "F11 | 印刷物の出版 | 出版 | 出版 | 書籍、雑誌などの出版、新聞社、書店、印刷会社",
+      "F19 | 印刷物の出版団体 | 出版 | 出版 | 新聞社・印刷物の出版関連の協会、団体、組合",
+      "F21 | ＡＶソフト・ゲーム関連 | ＡＶソフト・ゲーム関連 | ＡＶソフト・スポーツ・趣味用品 | ＡＶソフト（レコード、ＣＤ、ＬＤ、ビデオ、ＤＶＤ）、ゲームソフト・機器、カラオケ",
+      "F29 | ＡＶソフト・ゲーム関連団体 | ＡＶソフト・ゲーム関連 | ＡＶソフト・スポーツ・趣味用品 | ＡＶソフトゲーム関連の協会､団体､組合",
+      "G11 | 産業機械 | 産業機械 | エネルギー素材・機械 | 土木・建設・農業の産業機器、ビル空調、機器、エレベーター、店舗用機材",
+      "G19 | 産業機械団体 | 産業機械 | エネルギー素材・機械 | 産業機械の協会、団体、組合",
+      "H11 | カメラ・フィルム | 精密機器 | 精密機器・事務用品 | カメラ、フィルム",
+      "H12 | 時計 | 精密機器 | 精密機器・事務用品 | 時計",
+      "H13 | その他精密機器 | 精密機器 | 精密機器・事務用品 | 計測機器、エレクトロニクス部品",
+      "H19 | 精密機器団体 | 精密機器 | 精密機器・事務用品 | 精密機器関連の協会、団体、組合",
+      "該当無し"
+    ]
+  },
+  {
+    "label": "代理店名",
+    "name": "agent_company",
+    "isRequired": false
+  },
+  {
+    "label": "代理店担当者名",
+    "name": "agent_name",
+    "isRequired": false
+  },
+  {
+    "label": "代理店メールアドレス",
+    "name": "agent_email",
+    "type": "email",
+    "isRequired": false
+  }
+]

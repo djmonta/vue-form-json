@@ -1,0 +1,123 @@
+[
+  {
+    "html": "<p class='label subtitle'>お申し込み台数</p>",
+    "attr": {
+      "class": "labelDefaultMb",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "html": "<img src='/images/S.png' />",
+    "attr": {
+      "class": ""
+    }
+  },
+  {
+    "label": "Sモデル",
+    "name": "S_model",
+    "type": "select",
+    "placeholder": "選択",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "html": "<img src='/images/L.png' />",
+    "attr": {
+      "class": ""
+    }
+  },
+  {
+    "label": "Lモデル",
+    "name": "L_model",
+    "type": "select",
+    "placeholder": "選択",
+    "help": "導入には、審査がございます。",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "html": "<img src='/images/LL.png' />",
+    "attr": {
+      "class": ""
+    }
+  },
+  {
+    "label": "LLモデル",
+    "name": "LL_model",
+    "type": "select",
+    "placeholder": "選択",
+    "help": "導入には、審査がございます。",
+    "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  },
+  {
+    "html": "<p class='label'>S及びL台 配送希望日時</p><p class='desc mb-5'>S及びLをご希望の場合、配送に宅配便を使用いたします。配達希望時間は<br>午前中（9〜12時）、午後（12〜18時）、夜（18〜20時）の三通りの時間帯が選択可能です。<br>選択されない場合は、こちらで発送時間を決定する事になりますのでご了承下さい。</p>",
+    "attr": {
+      "class": "labelDefaultMb mt-15",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "配送希望日",
+    "name": "delivery_date",
+    "type": "datepicker",
+    "help": "2週間後以降で日付を設定ください",
+    "placeholder": "年/月/日",
+    "allowDaysAfter": 13,
+    "isRequired": false
+  },
+  {
+    "label": "配送希望時間",
+    "name": "delivery_time",
+    "showLabel": false,
+    "type": "select",
+    "placeholder": "配送希望時間",
+    "isRequired": false,
+    "options": ["午前中（9時〜12時）", "午後（12時〜18時）", "夜（18時〜20時）"]
+  },
+  {
+    "html": "<p class='label'>LL台 配送希望日時</p><p class='desc mb-5'>LLの場合、各施設の搬入時間の調節が必要な為、一ヶ月後以降で配達希望日を第三希望まで設定していただく必要がございます。さらに納品可能時刻を選択下さいませ。<br>選択されない場合は、こちらで発送時間を決定する事になりますのでご了承下さい。</p>",
+    "attr": {
+      "class": "labelDefaultMb mt-15",
+      "data-test": "dataTestFromJson"
+    }
+  },
+  {
+    "label": "第一希望",
+    "name": "LL_delivery_date1",
+    "type": "datepicker",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "placeholder": "年/月/日",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "第二希望",
+    "name": "LL_delivery_date2",
+    "type": "datepicker",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "placeholder": "年/月/日",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "第三希望",
+    "name": "LL_delivery_date3",
+    "type": "datepicker",
+    "help": "1ヶ月後以降で日付を設定ください",
+    "placeholder": "年/月/日",
+    "allowDaysAfter": 29,
+    "isRequired": false
+  },
+  {
+    "label": "納品可能時間",
+    "name": "LL_delivery_time",
+    "type": "timerange",
+    "isRequired": false,
+    "pickerOptions": {
+      "start": "09:00",
+      "end": "18:00",
+      "step": "1:00"
+    },
+    "attr": {
+      "class": "mb-10"
+    }
+  }
+]

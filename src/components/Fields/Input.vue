@@ -1,6 +1,6 @@
 <template lang="pug">
   input.input(:id="item.label | slugify",
-              :name="item.label | slugify",
+              :name="item.name || item.label | slugify",
               :type="item.type || 'text'",
               :placeholder="item.placeholder",
               :required="item.isRequired !== false",
